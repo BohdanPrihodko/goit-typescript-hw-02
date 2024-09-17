@@ -1,15 +1,13 @@
-import PropTypes from "prop-types";
+interface LoadMoreBtnProps {
+  onClick: () => void;
+}
 
-const LoadMoreBtn = ({ onClick }) => {
+const LoadMoreBtn: React.FC<LoadMoreBtnProps> = ({ onClick }) => {
   return (
     <button type="button" onClick={onClick}>
       Load more
     </button>
   );
-};
-
-LoadMoreBtn.propTypes = {
-  onClick: PropTypes.func.isRequired,
 };
 
 export default LoadMoreBtn;

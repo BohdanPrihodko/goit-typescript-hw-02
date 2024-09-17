@@ -1,40 +1,51 @@
-import Modal from 'react-modal';
-import PropTypes from 'prop-types';
+import Modal from "react-modal";
+import { FC, useEffect } from "react";
+import { ImageModalProps } from "./ImageModal.types";
 
 Modal.setAppElement("#root");
 
-const ImageModal = ({ isOpen, onClose, imageUrl, alt }) => {
-  const handleKeyDown = (e) => {
-    if (e.key === 'Escape') {
-      onClose();
+const ImageModal: FC<ImageModalProps> = ({
+  isOpen,
+  onClose,
+  imageUrl,
+  alt,
+}) => {
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    
+    if (isOpen) {
+      window.addEventListener("keydown", handleKeyDown);
     }
-  };
+
+    
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen, onClose]);
 
   return (
     <Modal
       isOpen={isOpen}
       onRequestClose={onClose}
-      onKeyDown={handleKeyDown}
       style={{
         content: {
-          background: 'rgba(0, 0, 0, 0.8)',
-          overflow: 'hidden',
+          background: "rgba(0, 0, 0, 0.8)",
+          overflow: "hidden",
         },
         overlay: {
-          backgroundColor: 'rgba(0, 0, 0, 0.8)',
+          backgroundColor: "rgba(0, 0, 0, 0.8)",
         },
       }}
     >
-      <img src={imageUrl} alt={alt} />
+      <img src={imageUrl} alt={alt || "Image"} />
     </Modal>
   );
-};
-
-ImageModal.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
-  imageUrl: PropTypes.string.isRequired,
-  alt: PropTypes.string,
 };
 
 export default ImageModal;

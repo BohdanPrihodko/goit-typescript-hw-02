@@ -1,13 +1,11 @@
-import PropTypes from "prop-types";
+interface ErrorMessageProps {
+  message: string;
+}
 
-const ErrorMessage = ({ message }) => (
+const ErrorMessage: React.FC<ErrorMessageProps> = ({ message }) => (
   <div className="ErrorMessage">
     <p>{message}</p>
   </div>
 );
-
-ErrorMessage.propTypes = {
-  message: PropTypes.string.isRequired,
-};
 
 export default ErrorMessage;
