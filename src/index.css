@@ -78,11 +78,11 @@ button {
 button:hover {
   border-color: #646cff;
 }
-button:focus,
-button:focus-visible {
+button:focus{
+
   outline: 4px auto -webkit-focus-ring-color;
 }
-
+/* button:focus-visible { */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

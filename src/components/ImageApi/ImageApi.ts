@@ -1,21 +1,14 @@
 import axios from "axios";
+import { Image as ImageType } from "../../App.types";
 
 const API_KEY = "nraUfKca8XbOXLFb2Q0yB4Cso66eCg6JrtjPsAHDEfQ";
 const BASE_URL = "https://api.unsplash.com/search/photos";
 
 
-interface Image {
-  id: string;
-  urls: {
-    small: string;
-    regular: string;
-  };
-  alt_description: string;
-}
 
 
 interface UnsplashApiResponse {
-  results: Image[];
+  results: ImageType[];
   total: number;
   total_pages: number;
 }

@@ -1,13 +1,6 @@
-export interface Image {
-  id: string;
-  urls: {
-    small: string;
-    regular: string;
-  };
-  alt_description?: string;
-}
+import { Image as ImageType } from "../../App.types";
 
 export interface ImageGalleryProps {
-  images: Image[];
+  images: ImageType[];
   onImageClick: (imageUrl: string, alt: string) => void;
 }

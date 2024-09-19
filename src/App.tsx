@@ -8,6 +8,8 @@ import ImageModal from "./components/ImageModal/ImageModal";
 import { fetchImages } from "./components/ImageApi/ImageApi";
 import { Image, ModalImage } from "./App.types";
 
+
+
 const App: React.FC = () => {
   const [query, setQuery] = useState<string>("");
   const [images, setImages] = useState<Image[]>([]);
