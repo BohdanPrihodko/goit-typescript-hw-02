@@ -2,6 +2,7 @@ import Modal from "react-modal";
 import { FC, useEffect } from "react";
 import { ImageModalProps } from "./ImageModal.types";
 
+
 Modal.setAppElement("#root");
 
 const ImageModal: FC<ImageModalProps> = ({
@@ -10,7 +11,6 @@ const ImageModal: FC<ImageModalProps> = ({
   imageUrl,
   alt,
 }) => {
-
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -18,12 +18,10 @@ const ImageModal: FC<ImageModalProps> = ({
       }
     };
 
-    
     if (isOpen) {
       window.addEventListener("keydown", handleKeyDown);
     }
 
-    
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
