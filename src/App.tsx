@@ -7,7 +7,7 @@ import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "./components/ImageModal/ImageModal";
 import { fetchImages } from "./components/ImageApi/ImageApi";
 import { Image, ModalImage } from "./App.types";
-
+import { Image as ImageType } from "./App.types";
 
 
 const App: React.FC = () => {
@@ -19,7 +19,7 @@ const App: React.FC = () => {
   const [showBtn, setShowBtn] = useState<boolean>(false);
   const [modalImage, setModalImage] = useState<ModalImage | null>(null);
 
-  useEffect(() => {тзь
+  useEffect(() => {
     if (!query) return;
 
     const getImages = async () => {

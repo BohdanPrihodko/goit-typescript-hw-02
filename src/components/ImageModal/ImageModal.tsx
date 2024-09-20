@@ -41,7 +41,7 @@ const ImageModal: FC<ImageModalProps> = ({
         },
       }}
     >
-      <img src={imageUrl} alt={alt || "Image"} />
+      <img className="modalImg" src={imageUrl} alt={alt || "Image"} />
     </Modal>
   );
 };
