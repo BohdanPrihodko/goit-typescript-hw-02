@@ -19,7 +19,7 @@ const App: React.FC = () => {
   const [showBtn, setShowBtn] = useState<boolean>(false);
   const [modalImage, setModalImage] = useState<ModalImage | null>(null);
 
-  useEffect(() => {
+  useEffect(() => {тзь
     if (!query) return;
 
     const getImages = async () => {
